@@ -3,6 +3,7 @@ package com.joseyustiz.springsecurityjpajwt.model;
 import lombok.Data;
 
 import javax.persistence.Column;
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -33,5 +34,6 @@ public class SignUpRequest {
     @Pattern(regexp = "^(?=.*[A-Z])(?=.*[a-z])(?=.{2,}[0-9])(?=\\S+$).{4,}$", message = "No cumple la complejidad mínima")
     @NotNull(message = "Es requerido")
     private String password;
+    @Valid
     private List<UserPhone> phones;
 }
