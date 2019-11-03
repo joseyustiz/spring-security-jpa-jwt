@@ -1,9 +1,6 @@
 package com.joseyustiz.springsecurityjpajwt.persistency.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -27,6 +24,7 @@ public class User {
     @Column(unique = true, nullable = false)
     private String email;
     @Column(nullable = false)
+    @ToString.Exclude
     private String password;
     @OneToMany(cascade = CascadeType.ALL)
     private List<Phone> phones;
@@ -37,6 +35,7 @@ public class User {
     @Column(nullable = false)
     private Date lastLogin;
     @Column(nullable = false)
+    @ToString.Exclude
     private String token;
     @Column(nullable = false)
     private boolean active;

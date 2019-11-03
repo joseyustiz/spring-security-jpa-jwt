@@ -24,6 +24,7 @@ public class RegisteredUser {
     @NonNull
     private Date lastLogin;
     @NonNull
+    @ToString.Exclude
     private String token;
     @Getter(AccessLevel.NONE)
     private boolean active;
