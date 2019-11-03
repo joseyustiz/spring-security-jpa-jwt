@@ -2,7 +2,6 @@ package com.joseyustiz.springsecurityjpajwt.model;
 
 import lombok.Data;
 
-import javax.persistence.Column;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -18,7 +17,6 @@ public class SignUpRequest {
     @NotNull
     private String name;
     @Pattern(regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$", message = "Formato inválido")
-    @Column(unique = true)
     @NotNull(message = "Es requerido")
     private String email;
     /*  Explanation:

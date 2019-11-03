@@ -21,6 +21,9 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-security'
+    //[BEGIN] JWT dependencies
+    compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
+    //[END] JWT dependencies
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'
     //[BEGIN] bean validation dependencies
