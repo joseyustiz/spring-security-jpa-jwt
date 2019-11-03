@@ -2,6 +2,8 @@ package com.joseyustiz.springsecurityjpajwt.persistency.entity;
 
 import com.joseyustiz.springsecurityjpajwt.model.RegisteredUser;
 import com.joseyustiz.springsecurityjpajwt.model.SignUpRequest;
+import com.joseyustiz.springsecurityjpajwt.model.UserContactInfo;
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
@@ -21,7 +23,7 @@ public class UserMapper {
     private final PasswordEncoder passwordEncoder;
     private final UserPhoneMapper userPhoneMapper;
 
-    public User mapToJpaEntity(SignUpRequest signUpRequest) {
+    public User mapToJpaEntity(@NonNull SignUpRequest signUpRequest) {
         Date now = new Date();
         return User.builder()
                 .name(signUpRequest.getName())
@@ -37,7 +39,7 @@ public class UserMapper {
                 .build();
     }
 
-    public RegisteredUser mapToRegisteredUser(User user) {
+    public RegisteredUser mapToRegisteredUser(@NonNull User user) {
         return RegisteredUser.builder()
                 .id(user.getId())
                 .created(user.getCreated())
@@ -45,6 +47,14 @@ public class UserMapper {
                 .lastLogin(user.getLastLogin())
                 .token(user.getToken())
                 .active(user.isActive())
+                .build();
+    }
+
+    public UserContactInfo mapToUserContactInfo(@NonNull User user) {
+        return UserContactInfo.builder()
+                .email(user.getEmail())
+                .name(user.getName())
+                .phones(user.getPhones() == null ? null : user.getPhones().stream().map(userPhoneMapper::mapToUserPhone).collect(toList()))
                 .build();
     }
 }

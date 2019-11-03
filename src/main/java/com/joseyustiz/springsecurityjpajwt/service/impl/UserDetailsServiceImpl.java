@@ -1,4 +1,4 @@
-package com.joseyustiz.springsecurityjpajwt.service;
+package com.joseyustiz.springsecurityjpajwt.service.impl;
 
 import com.joseyustiz.springsecurityjpajwt.model.SystemUserDetails;
 import com.joseyustiz.springsecurityjpajwt.persistency.UserRepo;
@@ -22,8 +22,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         Optional<User> user = userRepo.findByEmail(email);
-        user.orElseThrow(() -> new UsernameNotFoundException("Not found: " + email));
-
-        return user.map(SystemUserDetails::new).get();
+        return user.map(SystemUserDetails::new)
+                .orElseThrow(() -> new UsernameNotFoundException("email: " + email + " no pertenece a un usuario registrado"));
     }
 }

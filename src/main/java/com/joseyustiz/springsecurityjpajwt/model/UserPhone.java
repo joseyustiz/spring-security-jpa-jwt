@@ -1,9 +1,7 @@
 package com.joseyustiz.springsecurityjpajwt.model;
 
 import com.fasterxml.jackson.annotation.JsonSetter;
-import lombok.AccessLevel;
-import lombok.Data;
-import lombok.Setter;
+import lombok.*;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -13,6 +11,9 @@ import javax.validation.constraints.Pattern;
  */
 
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserPhone {
 
     @NotNull(message = "Es requerido")
