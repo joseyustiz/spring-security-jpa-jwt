@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import java.util.Date;
 import java.util.UUID;
 
-import static com.joseyustiz.springsecurityjpajwt.model.GlobalUserDetails.USER_ROLE;
+import static com.joseyustiz.springsecurityjpajwt.model.SystemUserDetails.USER_ROLE;
 import static java.util.stream.Collectors.toList;
 
 /**
@@ -27,7 +27,7 @@ public class UserMapper {
                 .name(signUpRequest.getName())
                 .email(signUpRequest.getEmail())
                 .password(passwordEncoder.encode(signUpRequest.getPassword()))
-                .phones(signUpRequest.getPhones().stream().map(userPhoneMapper::mapToPhoneJpaEntity).collect(toList()))
+                .phones(signUpRequest.getPhones() == null ? null : signUpRequest.getPhones().stream().map(userPhoneMapper::mapToPhoneJpaEntity).collect(toList()))
                 .token(UUID.randomUUID().toString())
                 .active(true)
                 .roles(USER_ROLE)

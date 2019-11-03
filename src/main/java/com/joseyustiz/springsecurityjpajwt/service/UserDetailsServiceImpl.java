@@ -1,6 +1,6 @@
 package com.joseyustiz.springsecurityjpajwt.service;
 
-import com.joseyustiz.springsecurityjpajwt.model.GlobalUserDetails;
+import com.joseyustiz.springsecurityjpajwt.model.SystemUserDetails;
 import com.joseyustiz.springsecurityjpajwt.persistency.UserRepo;
 import com.joseyustiz.springsecurityjpajwt.persistency.entity.User;
 import lombok.RequiredArgsConstructor;
@@ -24,6 +24,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         Optional<User> user = userRepo.findByEmail(email);
         user.orElseThrow(() -> new UsernameNotFoundException("Not found: " + email));
 
-        return user.map(GlobalUserDetails::new).get();
+        return user.map(SystemUserDetails::new).get();
     }
 }

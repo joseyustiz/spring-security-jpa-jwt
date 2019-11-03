@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 /**
  * Created by jyustiz on 02-11-19 for project spring-security-jpa-jwt.
  */
-public class GlobalUserDetails implements UserDetails {
+public class SystemUserDetails implements UserDetails {
     public static final String USER_ROLE = "USER";
 
     private final String email;
@@ -21,7 +21,7 @@ public class GlobalUserDetails implements UserDetails {
     private final boolean active;
     private final List<GrantedAuthority> authorities;
 
-    public GlobalUserDetails(User user) {
+    public SystemUserDetails(User user) {
         this.email = user.getEmail();
         this.password = user.getPassword();
         this.active = user.isActive();
