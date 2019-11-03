@@ -1,5 +1,6 @@
-package com.joseyustiz.springsecurityjpajwt.web;
+package com.joseyustiz.springsecurityjpajwt.web.error;
 
+import com.joseyustiz.springsecurityjpajwt.model.exception.EmailUsedException;
 import org.springframework.beans.TypeMismatchException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -44,7 +45,7 @@ class ErrorControllerAdvice extends ResponseEntityExceptionHandler {
         for (final ObjectError error : ex.getBindingResult().getGlobalErrors()) {
             errors.add(error.getObjectName() + ": " + error.getDefaultMessage());
         }
-        final ApiError apiError = new ApiError(HttpStatus.BAD_REQUEST, ex.getLocalizedMessage(), errors);
+        final ApiError apiError = new ApiError(HttpStatus.BAD_REQUEST, errors);
         return handleExceptionInternal(ex, apiError, headers, apiError.getStatus(), request);
     }
 
@@ -59,7 +60,7 @@ class ErrorControllerAdvice extends ResponseEntityExceptionHandler {
         for (final ObjectError error : ex.getBindingResult().getGlobalErrors()) {
             errors.add(error.getObjectName() + ": " + error.getDefaultMessage());
         }
-        final ApiError apiError = new ApiError(HttpStatus.BAD_REQUEST, ex.getLocalizedMessage(), errors);
+        final ApiError apiError = new ApiError(HttpStatus.BAD_REQUEST, errors);
         return handleExceptionInternal(ex, apiError, headers, apiError.getStatus(), request);
     }
 
@@ -69,7 +70,7 @@ class ErrorControllerAdvice extends ResponseEntityExceptionHandler {
         //
         final String error = ex.getValue() + " value for " + ex.getPropertyName() + " should be of type " + ex.getRequiredType();
 
-        final ApiError apiError = new ApiError(HttpStatus.BAD_REQUEST, ex.getLocalizedMessage(), error);
+        final ApiError apiError = new ApiError(HttpStatus.BAD_REQUEST, error);
         return new ResponseEntity<>(apiError, new HttpHeaders(), apiError.getStatus());
     }
 
@@ -78,7 +79,7 @@ class ErrorControllerAdvice extends ResponseEntityExceptionHandler {
         logger.info(ex.getClass().getName());
         //
         final String error = ex.getRequestPartName() + " part is missing";
-        final ApiError apiError = new ApiError(HttpStatus.BAD_REQUEST, ex.getLocalizedMessage(), error);
+        final ApiError apiError = new ApiError(HttpStatus.BAD_REQUEST, error);
         return new ResponseEntity<>(apiError, new HttpHeaders(), apiError.getStatus());
     }
 
@@ -87,7 +88,7 @@ class ErrorControllerAdvice extends ResponseEntityExceptionHandler {
         logger.info(ex.getClass().getName());
         //
         final String error = ex.getParameterName() + " parameter is missing";
-        final ApiError apiError = new ApiError(HttpStatus.BAD_REQUEST, ex.getLocalizedMessage(), error);
+        final ApiError apiError = new ApiError(HttpStatus.BAD_REQUEST, error);
         return new ResponseEntity<>(apiError, new HttpHeaders(), apiError.getStatus());
     }
 
@@ -99,7 +100,7 @@ class ErrorControllerAdvice extends ResponseEntityExceptionHandler {
         //
         final String error = ex.getName() + " should be of type " + Objects.requireNonNull(ex.getRequiredType()).getName();
 
-        final ApiError apiError = new ApiError(HttpStatus.BAD_REQUEST, ex.getLocalizedMessage(), error);
+        final ApiError apiError = new ApiError(HttpStatus.BAD_REQUEST, error);
         return new ResponseEntity<>(apiError, new HttpHeaders(), apiError.getStatus());
     }
 
@@ -112,7 +113,7 @@ class ErrorControllerAdvice extends ResponseEntityExceptionHandler {
             errors.add(violation.getRootBeanClass().getName() + " " + violation.getPropertyPath() + ": " + violation.getMessage());
         }
 
-        final ApiError apiError = new ApiError(HttpStatus.BAD_REQUEST, ex.getLocalizedMessage(), errors);
+        final ApiError apiError = new ApiError(HttpStatus.BAD_REQUEST, errors);
         return new ResponseEntity<>(apiError, new HttpHeaders(), apiError.getStatus());
     }
 
@@ -124,7 +125,7 @@ class ErrorControllerAdvice extends ResponseEntityExceptionHandler {
         //
         final String error = "No handler found for " + ex.getHttpMethod() + " " + ex.getRequestURL();
 
-        final ApiError apiError = new ApiError(HttpStatus.NOT_FOUND, ex.getLocalizedMessage(), error);
+        final ApiError apiError = new ApiError(HttpStatus.NOT_FOUND, error);
         return new ResponseEntity<>(apiError, new HttpHeaders(), apiError.getStatus());
     }
 
@@ -139,7 +140,7 @@ class ErrorControllerAdvice extends ResponseEntityExceptionHandler {
         builder.append(" method is not supported for this request. Supported methods are ");
         Objects.requireNonNull(ex.getSupportedHttpMethods()).forEach(t -> builder.append(t).append(" "));
 
-        final ApiError apiError = new ApiError(HttpStatus.METHOD_NOT_ALLOWED, ex.getLocalizedMessage(), builder.toString());
+        final ApiError apiError = new ApiError(HttpStatus.METHOD_NOT_ALLOWED, builder.toString());
         return new ResponseEntity<>(apiError, new HttpHeaders(), apiError.getStatus());
     }
 
@@ -154,7 +155,7 @@ class ErrorControllerAdvice extends ResponseEntityExceptionHandler {
         builder.append(" media type is not supported. Supported media types are ");
         ex.getSupportedMediaTypes().forEach(t -> builder.append(t).append(" "));
 
-        final ApiError apiError = new ApiError(HttpStatus.UNSUPPORTED_MEDIA_TYPE, ex.getLocalizedMessage(), builder.substring(0, builder.length() - 2));
+        final ApiError apiError = new ApiError(HttpStatus.UNSUPPORTED_MEDIA_TYPE, builder.substring(0, builder.length() - 2));
         return new ResponseEntity<>(apiError, new HttpHeaders(), apiError.getStatus());
     }
 
@@ -165,7 +166,16 @@ class ErrorControllerAdvice extends ResponseEntityExceptionHandler {
         logger.info(ex.getClass().getName());
         logger.error("error", ex);
         //
-        final ApiError apiError = new ApiError(HttpStatus.INTERNAL_SERVER_ERROR, ex.getLocalizedMessage(), "error occurred");
+        final ApiError apiError = new ApiError(HttpStatus.INTERNAL_SERVER_ERROR, "error occurred");
+        return new ResponseEntity<>(apiError, new HttpHeaders(), apiError.getStatus());
+    }
+
+    @ExceptionHandler({EmailUsedException.class})
+    public ResponseEntity<Object> handleEmailUsedException(final EmailUsedException ex, final WebRequest request) {
+        logger.info(ex.getClass().getName());
+        logger.error("error", ex);
+        //
+        final ApiError apiError = new ApiError(HttpStatus.BAD_REQUEST, ex.getMessage());
         return new ResponseEntity<>(apiError, new HttpHeaders(), apiError.getStatus());
     }
 

@@ -1,4 +1,4 @@
-package com.joseyustiz.springsecurityjpajwt.web;
+package com.joseyustiz.springsecurityjpajwt.web.error;
 
 import lombok.Data;
 import org.springframework.http.HttpStatus;
@@ -10,22 +10,19 @@ import java.util.List;
 class ApiError {
 
     private HttpStatus status;
-    private String message;
     private List<String> errors;
 
     //
 
-    public ApiError(final HttpStatus status, final String message, final List<String> errors) {
+    ApiError(final HttpStatus status, final List<String> errors) {
         super();
         this.status = status;
-        this.message = message;
         this.errors = errors;
     }
 
-    public ApiError(final HttpStatus status, final String message, final String error) {
+    ApiError(final HttpStatus status, final String error) {
         super();
         this.status = status;
-        this.message = message;
         errors = Collections.singletonList(error);
     }
 }
