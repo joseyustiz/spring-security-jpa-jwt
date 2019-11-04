@@ -16,7 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SignUpRequest {
-    @Size(min = 2, max = 255)
+    @Size(min = 2, max = 255, message = "Debe tener al menos 2 caracteres")
     @NotNull
     private String name;
     @Pattern(regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$", message = "Formato inválido")
