@@ -14,6 +14,21 @@ This project is an example about how to use JPA to store credentials of a User a
  * H2
  * Gradle 
  
+ ## Run The Project
+ The application has multiple gradle task useful to test and run it; the most frequently used are:
+ * **test** runs the the unit tests
+ ```bash
+ gradle test
+ ```
+ * **integrationTest** runs the the integration tests
+  ```bash
+ gradle integrationTest
+ ```
+ * **bootRun** runs the application using a embedded tomcat in port 8080
+ ```bash
+gradle bootRun
+```
+ ## Endpoints
 The application has the following two endpoints:
 
 ## [/user/signup](http://localhost:8080/user/signup)
