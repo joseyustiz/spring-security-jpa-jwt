@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.joseyustiz.springsecurityjpajwt</OriginalElement>
+  <nodes>
+    <node x="196.1625" y="188.0">com.joseyustiz.springsecurityjpajwt.model</node>
+    <node x="0.0" y="416.0">com.joseyustiz.springsecurityjpajwt.config</node>
+    <node x="0.0" y="490.0">com.joseyustiz.springsecurityjpajwt.SpringSecurityJpaJwtApplicationTests</node>
+    <node x="42.17242063492063" y="79.0">com.joseyustiz.springsecurityjpajwt.service.impl.UserSignUpServiceImpl</node>
+    <node x="499.375" y="317.0">com.joseyustiz.springsecurityjpajwt.service.GetUserContactInfoService</node>
+    <node x="642.25" y="416.0">com.joseyustiz.springsecurityjpajwt.web</node>
+    <node x="147.0" y="416.0">com.joseyustiz.springsecurityjpajwt.service.impl.UserDetailsServiceImpl</node>
+    <node x="182.1625" y="0.0">com.joseyustiz.springsecurityjpajwt.util</node>
+    <node x="310.1625" y="0.0">com.joseyustiz.springsecurityjpajwt.service.UserSignUpService</node>
+    <node x="359.0" y="416.0">com.joseyustiz.springsecurityjpajwt.service.impl.GetUserContactInfoServiceImpl</node>
+    <node x="91.85992063492057" y="317.0">com.joseyustiz.springsecurityjpajwt.persistency</node>
+    <node x="327.0" y="490.0">com.joseyustiz.springsecurityjpajwt.SpringSecurityJpaJwtApplication</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.joseyustiz.springsecurityjpajwt.web" target="com.joseyustiz.springsecurityjpajwt.model">
+      <point x="0.0" y="-14.5" />
+      <point x="698.25" y="396.0" />
+      <point x="724.875" y="396.0" />
+      <point x="724.875" y="277.0" />
+      <point x="315.86249999999995" y="277.0" />
+      <point x="56.69999999999999" y="14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.service.impl.GetUserContactInfoServiceImpl" target="com.joseyustiz.springsecurityjpajwt.model">
+      <point x="0.0" y="-14.5" />
+      <point x="480.5" y="396.0" />
+      <point x="488.875" y="396.0" />
+      <point x="488.875" y="297.0" />
+      <point x="290.6625" y="297.0" />
+      <point x="31.5" y="14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.model" target="com.joseyustiz.springsecurityjpajwt.persistency">
+      <point x="6.300000000000011" y="14.5" />
+      <point x="265.4625" y="297.0" />
+      <point x="230.98492063492057" y="297.0" />
+      <point x="59.625" y="-14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.persistency" target="com.joseyustiz.springsecurityjpajwt.persistency">
+      <point x="-59.625" y="14.5" />
+      <point x="111.73492063492057" y="366.0" />
+      <point x="71.85992063492057" y="366.0" />
+      <point x="71.85992063492057" y="331.5" />
+      <point x="-79.5" y="-0.0" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.service.impl.GetUserContactInfoServiceImpl" target="com.joseyustiz.springsecurityjpajwt.persistency">
+      <point x="-81.0" y="-14.5" />
+      <point x="399.5" y="386.0" />
+      <point x="230.98492063492057" y="386.0" />
+      <point x="59.625" y="14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.model" target="com.joseyustiz.springsecurityjpajwt.model">
+      <point x="-56.69999999999999" y="14.5" />
+      <point x="202.4625" y="237.0" />
+      <point x="176.1625" y="237.0" />
+      <point x="176.1625" y="212.16666666666666" />
+      <point x="-63.0" y="9.666666666666657" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.service.UserSignUpService" target="com.joseyustiz.springsecurityjpajwt.model">
+      <point x="20.5" y="14.5" />
+      <point x="412.6625" y="59.0" />
+      <point x="397.6625" y="59.0" />
+      <point x="397.6625" y="168.0" />
+      <point x="313.1625" y="168.0" />
+      <point x="54.0" y="-14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.persistency" target="com.joseyustiz.springsecurityjpajwt.model">
+      <point x="-19.875" y="-14.5" />
+      <point x="151.48492063492057" y="277.0" />
+      <point x="240.2625" y="277.0" />
+      <point x="-18.900000000000006" y="14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.web" target="com.joseyustiz.springsecurityjpajwt.service.UserSignUpService">
+      <point x="37.33333333333337" y="-14.5" />
+      <point x="735.875" y="59.0" />
+      <point x="453.6625" y="59.0" />
+      <point x="61.5" y="14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.service.impl.UserSignUpServiceImpl" target="com.joseyustiz.springsecurityjpajwt.service.UserSignUpService">
+      <point x="48.0" y="-14.5" />
+      <point x="186.17242063492063" y="59.0" />
+      <point x="330.6625" y="59.0" />
+      <point x="-61.5" y="14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.service.impl.UserDetailsServiceImpl" target="com.joseyustiz.springsecurityjpajwt.persistency">
+      <point x="-48.0" y="-14.5" />
+      <point x="195.0" y="396.0" />
+      <point x="191.23492063492057" y="396.0" />
+      <point x="19.875" y="14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.model" target="com.joseyustiz.springsecurityjpajwt.service.UserSignUpService">
+      <point x="36.0" y="-14.5" />
+      <point x="295.1625" y="158.0" />
+      <point x="386.6625" y="158.0" />
+      <point x="386.6625" y="59.0" />
+      <point x="371.6625" y="59.0" />
+      <point x="-20.5" y="14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.config" target="com.joseyustiz.springsecurityjpajwt.persistency">
+      <point x="0.0" y="-14.5" />
+      <point x="63.5" y="396.0" />
+      <point x="151.48492063492057" y="396.0" />
+      <point x="-19.875" y="14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.model" target="com.joseyustiz.springsecurityjpajwt.util">
+      <point x="0.0" y="-14.5" />
+      <point x="259.1625" y="128.0" />
+      <point x="244.6724206349206" y="128.0" />
+      <point x="244.6724206349206" y="49.0" />
+      <point x="236.1625" y="49.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.service.GetUserContactInfoService" target="com.joseyustiz.springsecurityjpajwt.model">
+      <point x="0.0" y="-14.5" />
+      <point x="606.875" y="287.0" />
+      <point x="303.26249999999993" y="287.0" />
+      <point x="44.099999999999966" y="14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.service.impl.UserSignUpServiceImpl" target="com.joseyustiz.springsecurityjpajwt.persistency">
+      <point x="-72.0" y="14.5" />
+      <point x="66.17242063492063" y="168.0" />
+      <point x="128.4375" y="168.0" />
+      <point x="128.4375" y="297.0" />
+      <point x="111.73492063492057" y="297.0" />
+      <point x="-59.625" y="-14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.service.impl.UserSignUpServiceImpl" target="com.joseyustiz.springsecurityjpajwt.model">
+      <point x="24.0" y="14.5" />
+      <point x="162.17242063492063" y="148.0" />
+      <point x="223.1625" y="148.0" />
+      <point x="-36.0" y="-14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.service.impl.UserSignUpServiceImpl" target="com.joseyustiz.springsecurityjpajwt.util">
+      <point x="-48.0" y="-14.5" />
+      <point x="90.17242063492063" y="49.0" />
+      <point x="200.1625" y="49.0" />
+      <point x="-36.0" y="14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.service.impl.GetUserContactInfoServiceImpl" target="com.joseyustiz.springsecurityjpajwt.service.GetUserContactInfoService">
+      <point x="81.0" y="-14.5" />
+      <point x="561.5" y="396.0" />
+      <point x="553.125" y="396.0" />
+      <point x="-53.75" y="14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.model" target="com.joseyustiz.springsecurityjpajwt.service.impl.UserSignUpServiceImpl">
+      <point x="-54.0" y="-14.5" />
+      <point x="205.1625" y="158.0" />
+      <point x="114.17242063492063" y="158.0" />
+      <point x="-24.0" y="14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.web" target="com.joseyustiz.springsecurityjpajwt.service.GetUserContactInfoService">
+      <point x="-37.33333333333337" y="-14.5" />
+      <point x="53.75" y="14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.service.impl.UserDetailsServiceImpl" target="com.joseyustiz.springsecurityjpajwt.model">
+      <point x="48.0" y="-14.5" />
+      <point x="291.0" y="396.0" />
+      <point x="278.0625" y="396.0" />
+      <point x="18.899999999999977" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="265.5" y="202.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

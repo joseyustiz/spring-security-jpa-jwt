@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.joseyustiz.springsecurityjpajwt</OriginalElement>
+  <nodes>
+    <node x="205.39285714285714" y="0.0">com.joseyustiz.springsecurityjpajwt.service</node>
+    <node x="40.0" y="79.0">com.joseyustiz.springsecurityjpajwt.model</node>
+    <node x="96.39285714285714" y="277.0">com.joseyustiz.springsecurityjpajwt.config</node>
+    <node x="0.0" y="351.0">com.joseyustiz.springsecurityjpajwt.SpringSecurityJpaJwtApplicationTests</node>
+    <node x="219.64285714285714" y="198.0">com.joseyustiz.springsecurityjpajwt.web</node>
+    <node x="27.14285714285714" y="0.0">com.joseyustiz.springsecurityjpajwt.util</node>
+    <node x="40.64285714285714" y="198.0">com.joseyustiz.springsecurityjpajwt.persistency</node>
+    <node x="0.0" y="425.0">com.joseyustiz.springsecurityjpajwt.SpringSecurityJpaJwtApplication</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.joseyustiz.springsecurityjpajwt.web" target="com.joseyustiz.springsecurityjpajwt.model">
+      <point x="-28.0" y="-14.5" />
+      <point x="247.64285714285714" y="168.0" />
+      <point x="157.0" y="168.0" />
+      <point x="54.0" y="14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.model" target="com.joseyustiz.springsecurityjpajwt.persistency">
+      <point x="36.0" y="14.5" />
+      <point x="139.0" y="178.0" />
+      <point x="173.14285714285714" y="178.0" />
+      <point x="53.0" y="-14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.persistency" target="com.joseyustiz.springsecurityjpajwt.persistency">
+      <point x="-39.75" y="14.5" />
+      <point x="80.39285714285714" y="247.0" />
+      <point x="20.64285714285714" y="247.0" />
+      <point x="20.64285714285714" y="212.5" />
+      <point x="-79.5" y="-0.0" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.model" target="com.joseyustiz.springsecurityjpajwt.model">
+      <point x="-18.0" y="14.5" />
+      <point x="85.0" y="148.0" />
+      <point x="0.0" y="148.0" />
+      <point x="0.0" y="83.83333333333334" />
+      <point x="-63.0" y="-9.666666666666657" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.persistency" target="com.joseyustiz.springsecurityjpajwt.model">
+      <point x="-53.0" y="-14.5" />
+      <point x="67.14285714285714" y="178.0" />
+      <point x="103.0" y="178.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.model" target="com.joseyustiz.springsecurityjpajwt.service">
+      <point x="42.0" y="-14.5" />
+      <point x="145.0" y="54.0" />
+      <point x="238.14285714285714" y="54.0" />
+      <point x="-32.75" y="14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.web" target="com.joseyustiz.springsecurityjpajwt.service">
+      <point x="28.0" y="-14.5" />
+      <point x="32.75" y="14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.config" target="com.joseyustiz.springsecurityjpajwt.persistency">
+      <point x="0.0" y="-14.5" />
+      <point x="39.75" y="14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.model" target="com.joseyustiz.springsecurityjpajwt.util">
+      <point x="-42.0" y="-14.5" />
+      <point x="61.0" y="54.0" />
+      <point x="54.14285714285714" y="54.0" />
+      <point x="-27.0" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="167.5" y="203.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.joseyustiz.springsecurityjpajwt</OriginalElement>
+  <nodes>
+    <node x="518.8345238095237" y="188.0">com.joseyustiz.springsecurityjpajwt.service</node>
+    <node x="85.02202380952377" y="188.0">com.joseyustiz.springsecurityjpajwt.persistency.UserRepo</node>
+    <node x="49.08197278911564" y="307.0">com.joseyustiz.springsecurityjpajwt.config.JpaConfiguration</node>
+    <node x="256.3345238095238" y="188.0">com.joseyustiz.springsecurityjpajwt.persistency.entity.UserMapper</node>
+    <node x="363.6041666666667" y="79.0">com.joseyustiz.springsecurityjpajwt.persistency.entity.UserPhoneMapper</node>
+    <node x="0.0" y="584.0">com.joseyustiz.springsecurityjpajwt.persistency.entity.User.UserBuilder</node>
+    <node x="208.39447278911564" y="79.0">com.joseyustiz.springsecurityjpajwt.persistency.entity.User</node>
+    <node x="293.0" y="510.0">com.joseyustiz.springsecurityjpajwt.config.SecurityConfiguration</node>
+    <node x="0.0" y="510.0">com.joseyustiz.springsecurityjpajwt.SpringSecurityJpaJwtApplication</node>
+    <node x="0.0" y="436.0">com.joseyustiz.springsecurityjpajwt.persistency.UserRepoIntegrationTest</node>
+    <node x="299.6584750566893" y="307.0">com.joseyustiz.springsecurityjpajwt.model</node>
+    <node x="280.14447278911564" y="0.0">com.joseyustiz.springsecurityjpajwt.persistency.entity.Phone</node>
+    <node x="454.06680839002263" y="436.0">com.joseyustiz.springsecurityjpajwt.web</node>
+    <node x="523.0" y="510.0">com.joseyustiz.springsecurityjpajwt.persistency.entity.Phone.PhoneBuilder</node>
+    <node x="409.8345238095238" y="188.0">com.joseyustiz.springsecurityjpajwt.util.JwtUtil</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.joseyustiz.springsecurityjpajwt.persistency.UserRepo" target="com.joseyustiz.springsecurityjpajwt.persistency.entity.User">
+      <point x="0.0" y="-14.5" />
+      <point x="138.52202380952377" y="148.0" />
+      <point x="235.53732993197275" y="148.0" />
+      <point x="-10.85714285714289" y="14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.model" target="com.joseyustiz.springsecurityjpajwt.persistency.entity.User">
+      <point x="-26.25" y="-14.5" />
+      <point x="336.4084750566893" y="257.0" />
+      <point x="213.02202380952377" y="257.0" />
+      <point x="213.02202380952377" y="168.0" />
+      <point x="257.2516156462585" y="168.0" />
+      <point x="10.857142857142833" y="14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.web" target="com.joseyustiz.springsecurityjpajwt.model">
+      <point x="-28.0" y="-14.5" />
+      <point x="482.06680839002263" y="416.0" />
+      <point x="413.0584750566893" y="416.0" />
+      <point x="50.39999999999998" y="14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.persistency.entity.User" target="com.joseyustiz.springsecurityjpajwt.persistency.entity.Phone">
+      <point x="0.0" y="-14.5" />
+      <point x="246.39447278911564" y="54.0" />
+      <point x="301.64447278911564" y="54.0" />
+      <point x="-21.5" y="14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.persistency.UserRepoIntegrationTest" target="com.joseyustiz.springsecurityjpajwt.model">
+      <point x="76.125" y="-14.5" />
+      <point x="177.625" y="416.0" />
+      <point x="387.8584750566894" y="416.0" />
+      <point x="25.19999999999999" y="14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.service" target="com.joseyustiz.springsecurityjpajwt.model">
+      <point x="0.0" y="14.5" />
+      <point x="584.3345238095237" y="287.0" />
+      <point x="420.4084750566893" y="287.0" />
+      <point x="57.75" y="-14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.model" target="com.joseyustiz.springsecurityjpajwt.model">
+      <point x="-50.4" y="14.5" />
+      <point x="312.25847505668935" y="356.0" />
+      <point x="279.6584750566893" y="356.0" />
+      <point x="279.6584750566893" y="331.16666666666663" />
+      <point x="-63.0" y="9.666666666666657" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.persistency.UserRepoIntegrationTest" target="com.joseyustiz.springsecurityjpajwt.persistency.entity.User">
+      <point x="-25.375" y="-14.5" />
+      <point x="76.125" y="406.0" />
+      <point x="27.58197278911561" y="406.0" />
+      <point x="27.58197278911561" y="138.0" />
+      <point x="224.68018707482992" y="138.0" />
+      <point x="-21.714285714285722" y="14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.model" target="com.joseyustiz.springsecurityjpajwt.util.JwtUtil">
+      <point x="36.75" y="-14.5" />
+      <point x="399.4084750566893" y="267.0" />
+      <point x="476.5845238095238" y="267.0" />
+      <point x="22.25" y="14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.persistency.entity.UserMapper" target="com.joseyustiz.springsecurityjpajwt.persistency.entity.UserPhoneMapper">
+      <point x="30.5" y="-14.5" />
+      <point x="347.8345238095238" y="148.0" />
+      <point x="390.27083333333337" y="148.0" />
+      <point x="-53.33333333333334" y="14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.model" target="com.joseyustiz.springsecurityjpajwt.service">
+      <point x="47.25" y="-14.5" />
+      <point x="409.9084750566893" y="277.0" />
+      <point x="540.6678571428571" y="277.0" />
+      <point x="-43.666666666666686" y="14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.persistency.UserRepoIntegrationTest" target="com.joseyustiz.springsecurityjpajwt.persistency.UserRepo">
+      <point x="25.375" y="-14.5" />
+      <point x="126.875" y="396.0" />
+      <point x="38.58197278911561" y="396.0" />
+      <point x="38.58197278911561" y="287.0" />
+      <point x="98.39702380952377" y="287.0" />
+      <point x="-40.125" y="14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.persistency.entity.UserMapper" target="com.joseyustiz.springsecurityjpajwt.model">
+      <point x="30.5" y="14.5" />
+      <point x="347.8345238095238" y="237.0" />
+      <point x="357.4084750566893" y="237.0" />
+      <point x="-5.25" y="-14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.web" target="com.joseyustiz.springsecurityjpajwt.service">
+      <point x="27.99999999999997" y="-14.5" />
+      <point x="538.0668083900226" y="416.0" />
+      <point x="611.3612811791384" y="416.0" />
+      <point x="611.3612811791384" y="287.0" />
+      <point x="628.0011904761905" y="287.0" />
+      <point x="43.66666666666663" y="14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.persistency.entity.UserPhoneMapper" target="com.joseyustiz.springsecurityjpajwt.persistency.entity.Phone">
+      <point x="0.0" y="-14.5" />
+      <point x="443.6041666666667" y="54.0" />
+      <point x="344.64447278911564" y="54.0" />
+      <point x="21.5" y="14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.persistency.entity.UserPhoneMapper" target="com.joseyustiz.springsecurityjpajwt.model">
+      <point x="53.33333333333334" y="14.5" />
+      <point x="496.9375" y="168.0" />
+      <point x="399.3345238095238" y="168.0" />
+      <point x="399.3345238095238" y="247.0" />
+      <point x="378.4084750566893" y="247.0" />
+      <point x="15.75" y="-14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.persistency.entity.UserMapper" target="com.joseyustiz.springsecurityjpajwt.persistency.entity.User">
+      <point x="-30.5" y="-14.5" />
+      <point x="286.8345238095238" y="168.0" />
+      <point x="268.10875850340136" y="168.0" />
+      <point x="21.714285714285722" y="14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.model" target="com.joseyustiz.springsecurityjpajwt.persistency.entity.UserPhoneMapper">
+      <point x="5.25" y="-14.5" />
+      <point x="367.9084750566893" y="237.0" />
+      <point x="388.8345238095238" y="237.0" />
+      <point x="388.8345238095238" y="158.0" />
+      <point x="443.6041666666667" y="158.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.service" target="com.joseyustiz.springsecurityjpajwt.persistency.entity.User">
+      <point x="0.0" y="-14.5" />
+      <point x="584.3345238095237" y="138.0" />
+      <point x="278.9659013605442" y="138.0" />
+      <point x="32.571428571428555" y="14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.model" target="com.joseyustiz.springsecurityjpajwt.persistency.UserRepo">
+      <point x="-57.75" y="-14.5" />
+      <point x="304.9084750566893" y="287.0" />
+      <point x="151.89702380952377" y="287.0" />
+      <point x="13.375" y="14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.model" target="com.joseyustiz.springsecurityjpajwt.persistency.entity.UserMapper">
+      <point x="-15.75" y="-14.5" />
+      <point x="346.9084750566893" y="247.0" />
+      <point x="286.8345238095238" y="247.0" />
+      <point x="-30.5" y="14.5" />
+    </edge>
+    <edge source="com.joseyustiz.springsecurityjpajwt.config.JpaConfiguration" target="com.joseyustiz.springsecurityjpajwt.persistency.UserRepo">
+      <point x="0.0" y="-14.5" />
+      <point x="-13.375" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.9886323268206039" x="418.5309019044197" y="244.55264103485447" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>Production</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
