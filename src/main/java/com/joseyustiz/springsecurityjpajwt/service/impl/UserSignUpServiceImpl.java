@@ -27,15 +27,23 @@ public class UserSignUpServiceImpl implements UserSignUpService {
     private final JwtUtil jwtTokenUtil;
     @Override
     public RegisteredUser signUp(SignUpRequest signUpRequest) throws EmailUsedException {
+        verifyEmailIsNotUsed(signUpRequest);
+        User user = mapUserToSave(signUpRequest);
+        log.info("User to persist=[{}]", user);
+        User savedUser = userRepo.save(user);
+        return userMapper.mapToRegisteredUser(savedUser);
+    }
+
+    public User mapUserToSave(SignUpRequest signUpRequest) {
+        User user = userMapper.mapToJpaEntity(signUpRequest);
+        user.setToken(jwtTokenUtil.generateToken(new SystemUserDetails(user)));
+        return user;
+    }
+
+    public void verifyEmailIsNotUsed(SignUpRequest signUpRequest) throws EmailUsedException {
         Optional<User> storedUser = userRepo.findByEmail(signUpRequest.getEmail());
         if (storedUser.isPresent()) {
             throw new EmailUsedException("email: El correo ya registrado");
         }
-
-        User user = userMapper.mapToJpaEntity(signUpRequest);
-        user.setToken(jwtTokenUtil.generateToken(new SystemUserDetails(user)));
-        log.info("User to persist=[{}]", user);
-        User savedUser = userRepo.save(user);
-        return userMapper.mapToRegisteredUser(savedUser);
     }
 }
