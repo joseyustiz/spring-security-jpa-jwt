@@ -20,7 +20,7 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-class Phone {
+public class Phone {
 
     @Id
     @GeneratedValue

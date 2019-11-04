@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class UserPhoneMapper {
-    Phone mapToPhoneJpaEntity(@NonNull UserPhone userPhone) {
+    public Phone mapToPhoneJpaEntity(@NonNull UserPhone userPhone) {
         return Phone.builder()
                 .number(userPhone.getNumber())
                 .cityCode(userPhone.getCityCode())
@@ -17,7 +17,11 @@ public class UserPhoneMapper {
                 .build();
     }
 
-    UserPhone mapToUserPhone(@NonNull Phone phone) {
-        return UserPhone.builder().cityCode(phone.getCityCode()).countryCode(phone.getCountryCode()).number(phone.getNumber()).build();
+    public UserPhone mapToUserPhone(@NonNull Phone phone) {
+        return UserPhone.builder()
+                .cityCode(phone.getCityCode())
+                .countryCode(phone.getCountryCode())
+                .number(phone.getNumber())
+                .build();
     }
 }
