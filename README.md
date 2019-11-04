@@ -1,5 +1,5 @@
 # Rest API for User Sign up
-This project is an example about how to use JPA to store credentials of a User and use JWT for authorization; I used Layer Architecture. The technology utilized for the project was:
+This project is an example about how to use JPA to store credentials of a User and use JWT for authorization; I implemented a Layer Architecture, basic patterns like Builder, and technology such as:
  * Java 8
  * Spring Boot
  * Spring MVC
