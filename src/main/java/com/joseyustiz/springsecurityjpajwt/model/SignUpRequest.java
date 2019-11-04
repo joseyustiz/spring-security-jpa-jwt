@@ -1,7 +1,6 @@
 package com.joseyustiz.springsecurityjpajwt.model;
 
-import lombok.Data;
-import lombok.ToString;
+import lombok.*;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -13,6 +12,9 @@ import java.util.List;
  * Created by jyustiz on 02-11-19 for project spring-security-jpa-jwt.
  */
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class SignUpRequest {
     @Size(min = 2, max = 255)
     @NotNull
