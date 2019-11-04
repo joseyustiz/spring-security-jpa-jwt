@@ -1,4 +1,4 @@
-# Getting Started
+# Rest API for User Sign up
 This project is an example about how to use JPA to store credentials of a User and use JWT for authorization; I used Layer Architecture. The technology utilized for the project was:
  * Java 8
  * Spring Boot
@@ -16,7 +16,7 @@ This project is an example about how to use JPA to store credentials of a User a
  
 The application has the following two endpoints:
 
-# [/user/signup](http://localhost:8080/user/signup)
+## [/user/signup](http://localhost:8080/user/signup)
 Public endpoint to register an user; it stores contact information and credentials sent as request body.
 
 **HTTP Method:** POST
@@ -40,7 +40,7 @@ Phone Object:
 | citycode | Yes | String | Accepts between 1 to 3 digits | 9 |
 | contrycode | No | String | Accepts between 1 to 6 digits | 56 |
 
-## Valid request
+### Valid request
 ```json
 {
 	"name": "Jose Yustiz",
@@ -55,7 +55,7 @@ Phone Object:
 	]
 }
 ```
-## Valid Response
+### Valid Response
 ```json
 {
     "id": "253b9787-1d9e-41d0-b9de-fc905f10e955",
@@ -68,7 +68,7 @@ Phone Object:
 ```
 **NOTE:** the JWT token has a TTL of 10 hours
 
-## Response for Invalid Request: Email Already Registered
+### Response for Invalid Request: Email Already Registered
 ```json
 {
     "status": "BAD_REQUEST",
@@ -77,7 +77,7 @@ Phone Object:
     ]
 }
 ```
-## Response for Invalid Request: Attributes Bad Format
+### Response for Invalid Request: Attributes Bad Format
 ```json
 {
     "status": "BAD_REQUEST",
@@ -92,7 +92,7 @@ Phone Object:
 }
 ```
 
-### [/user/info](http://localhost:8080/user/info) 
+## [/user/info](http://localhost:8080/user/info) 
 Protected endpoint that is used to test authorization with with a valid JWT of a registered user; it returns contact info of the User stored in the database.
 
 **HTTP Method:** GET
@@ -111,7 +111,7 @@ Request Header:
 ------------|----------|------|--------|
 | Authorization | Yes |  Bearer keyword, a white space and the JWT token generated during the sign up  | Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb3NlQGpvc2V5dXN0aXouY29tIiwiZXhwIjoxNTcyODc4OTg4LCJpYXQiOjE1NzI4NDI5ODh9.W1eOi1hRnT-ToycRTw70mHV3Lhy2mwj9XuDNjvk4p9Y |
 
-## Valid Response
+### Valid Response
 ```json
 {
     "name": "Jose Yustiz",
@@ -126,7 +126,7 @@ Request Header:
 }
 ```
 
-## Response for Invalid Request: Missing Header
+### Response for Invalid Request: Missing Header
 ```json
 {
     "timestamp": "2019-11-04T04:58:28.925+0000",
@@ -137,7 +137,7 @@ Request Header:
 }
 ```
 
-## Response for Invalid Request: Email parameter is missing
+### Response for Invalid Request: Email parameter is missing
 ```json
 {
     "status": "BAD_REQUEST",
@@ -146,7 +146,7 @@ Request Header:
     ]
 }
 ```
-## Response for Invalid Request: Email is not found
+### Response for Invalid Request: Email is not found
 ```json
 {
     "status": "BAD_REQUEST",
@@ -156,23 +156,23 @@ Request Header:
 }
 ```
 
-# Classes Diagram
+## Classes Diagram
 
-## Project Package View
+### Project Package View
 ![Package View](doc/Package-springsecurityjpajwt.jpg)
 
-## Web Package Expanded View
+### Web Package Expanded View
 ![Web Package View](doc/springsecurityjpajwt-web.jpg)
 
-## Service Package Expanded View
+### Service Package Expanded View
 ![Service Package View](doc/springsecurityjpajwt-service.jpg)
 
-## Persistency Package Expanded View
+### Persistency Package Expanded View
 ![Persistency Package View](doc/springsecurityjpajwt-persistency.jpg)
 
-## Model Package Expanded View
+### Model Package Expanded View
 ![Model Package View](doc/springsecurityjpajwt-model.jpg)
 
-# Sequence Diagram
-## Sign Up Diagram
+## Sequence Diagram
+### Sign Up Diagram
 ![Model Package View](doc/sequenceDiagram-signUp.jpg)
