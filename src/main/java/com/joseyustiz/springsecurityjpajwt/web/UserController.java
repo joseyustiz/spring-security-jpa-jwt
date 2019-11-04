@@ -20,6 +20,7 @@ import javax.validation.Valid;
  * Created by jyustiz on 02-11-19 for project spring-security-jpa-jwt.
  */
 @RestController
+@RequestMapping("/user")
 @RequiredArgsConstructor
 @Slf4j
 public class UserController {
